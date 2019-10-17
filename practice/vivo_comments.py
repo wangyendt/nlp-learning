@@ -22,7 +22,7 @@ products = {
     'nex3': 10001477,
 }
 save_path = 'vivo-comments.txt'
-save_excel_path = 'vivo-comments.xlsx'
+save_excel_path = 'data/vivo-comments.xlsx'
 url_base = 'http://shop.vivo.com.cn/api/v1/remark/getDetail?'
 
 

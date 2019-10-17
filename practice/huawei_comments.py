@@ -106,4 +106,4 @@ if __name__ == '__main__':
     for i in range(n_tasks + 1):
         result += pool.imap(main, range(max_worker * i + 1, min(page_nums, max_worker * (i + 1)) + 1))
     df_save = pd.concat(result)
-    df_save.to_excel('huawei-comments.xlsx', index=False)
+    df_save.to_excel('data/huawei-comments.xlsx', index=False)
