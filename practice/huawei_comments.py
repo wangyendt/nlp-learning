@@ -10,14 +10,19 @@
 """
 
 import time
+from multiprocessing import Pool
 from urllib.parse import urlencode
 
 import pandas as pd
 import requests
-
-# from ndtpy.tools import *
+from fake_useragent import UserAgent
 
 comments_url = 'https://openapi.vmall.com/rms/comment/getCommentList.json?'
+
+global_vars = {
+    'num_pages': 0,
+    'ua': UserAgent(verify_ssl=False)
+}
 
 
 def get_page_number(url):
@@ -28,16 +33,21 @@ def get_page_number(url):
     }
     header = {
         "Accept-Encoding": "gzip, deflate",
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36',
+        'User-Agent': global_vars['ua'].chrome
     }
 
     while True:
-        time.sleep(1)
-        response = requests.get(url + urlencode(data), headers=header)
-        response.encoding = 'utf-8'
-        if response.json()['info'] == '成功':
-            return int(response.json()['data']['page']['totalPage'])
-        print(f'正在重试爬取页数...')
+        time.sleep(0.2)
+        try:
+            response = requests.get(url + urlencode(data), headers=header)
+            if response.status_code == 200:
+                response.encoding = 'utf-8'
+                if response.json()['info'] == '成功':
+                    return int(response.json()['data']['page']['totalPage'])
+        except:
+            continue
+        finally:
+            print(f'正在重试爬取页数...')
 
 
 def get_one_page_comments(url: str, page: int) -> str:
@@ -48,18 +58,22 @@ def get_one_page_comments(url: str, page: int) -> str:
     }
     header = {
         "Accept-Encoding": "gzip, deflate",
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36',
+        'User-Agent': global_vars['ua'].random
     }
 
     while True:
-        time.sleep(1)
-        response = requests.get(url + urlencode(data), headers=header)
-        response.encoding = 'utf-8'
-        print(f'正在爬取第{page}页...')
-        if response.json()['info'] == '成功':
-            # pprint.pprint(response.json())
-            return response.json()['data']['comments']
-        print(f'正在重试第{page}页')
+        time.sleep(0.2)
+        try:
+            response = requests.get(url + urlencode(data), headers=header)
+            response.encoding = 'utf-8'
+            if response.json()['info'] == '成功':
+                # pprint.pprint(response.json())
+                return response.json()['data']['comments']
+        except:
+            print(f'正在重试第{page}页')
+            continue
+        finally:
+            print(f'正在爬取第{page}页...')
 
 
 def parse_one_page_comments(url: str, page: int):
@@ -75,21 +89,21 @@ def parse_one_page_comments(url: str, page: int):
     # pprint.pprint(js)
 
 
-def main():
+def main(page):
     df = pd.DataFrame()
-    writer = pd.ExcelWriter('huawei-comments.xlsx', engine='openpyxl', mode='w')
-    page_nums = get_page_number(comments_url)
-    use_header = True
-    for page in range(page_nums):
-        start_row = len(df)
-        df = pd.DataFrame()
-        for res in parse_one_page_comments(comments_url, page + 1):
-            df = df.append(res, ignore_index=True)
-        df.index = range(start_row, start_row + len(df))
-        df.to_excel(writer, startrow=start_row, header=use_header)
-        use_header = False
-        writer.save()
+    for res in parse_one_page_comments(comments_url, page):
+        df = df.append(res, ignore_index=True)
+    return df
 
 
 if __name__ == '__main__':
-    main()
+    global_vars['num_pages'] = page_nums = get_page_number(comments_url)
+    pool = Pool()
+    max_worker = 64
+    n_tasks = page_nums // max_worker
+    result = []
+    print(global_vars['num_pages'])
+    for i in range(n_tasks + 1):
+        result += pool.imap(main, range(max_worker * i + 1, min(page_nums, max_worker * (i + 1)) + 1))
+    df_save = pd.concat(result)
+    df_save.to_excel('huawei-comments.xlsx', index=False)
