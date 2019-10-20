@@ -1,8 +1,10 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # author: wang121ye
-# datetime: 2019/10/17 17:01
+# datetime: 2019/10/20 20:27
 # software: PyCharm
+
+
 
 import json
 import re
@@ -64,7 +66,6 @@ class Spider:
 
     def work(self, save_path):
         page_nums = self.get_num_pages()
-        print(f'共有{page_nums}页')
         df_save = pd.DataFrame()
         for i in range(1, 1 + page_nums):
             df_save = df_save.append(self.get_single_page_info(i))
@@ -73,14 +74,19 @@ class Spider:
 
 if __name__ == '__main__':
     target = {
-        'vivo-nex3': '100007988984',
-        'vivo-nex3-5g': '100007988988',
-        'vivo-iqoo-pro': '100007612396',
-        'vivo-iqoo-pro-5g': '100007411764',
-        'huawei-p30-pro': '100008384328'
+        # 'vivo-nex3': '100007988984',
+        # 'vivo-nex3-5g': '100007988988',
+        # 'vivo-iqoo-pro': '100007612396',
+        'vivo-iqoo-pro-5g': '601188351187',
     }
 
-    url_base = 'https://sclub.jd.com/comment/productPageComments.action?'
+    url_base = 'https://rate.tmall.com/list_detail_rate.htm?'
+    data = {
+        'itemId':601188351187
+    }
+    response = requests.get(url_base+urlencode(data))
+    print(response.status_code,response.text)
+    exit()
     data = {
         'callback': 'fetchJSON_comment98vv1437',
         'productId': '100007411764',
@@ -128,7 +134,6 @@ if __name__ == '__main__':
     }
 
     for k, v in target.items():
-        print(f'正在爬取{k}的评论...')
         path = f'data/jd-comments_{k}.xlsx'
         params['data']['productId'] = v
         params['headers']['Referer'] = f'https://item.jd.com/{v}.html'

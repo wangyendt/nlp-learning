@@ -21,7 +21,7 @@ import requests
 products = {
     'nex3': 10001477,
 }
-save_path = 'vivo-comments.txt'
+save_path = 'data/vivo-comments.txt'
 save_excel_path = 'data/vivo-comments.xlsx'
 url_base = 'http://shop.vivo.com.cn/api/v1/remark/getDetail?'
 
@@ -64,11 +64,13 @@ def parse_one_page_comments(page):
         url_base,
         'nex3', page
     )
-    # print(json_str)
+    # import pprint
+    # pprint.pprint(json_str)
     comments = jsonpath.jsonpath(json_str, '$..content')
+    score = jsonpath.jsonpath(json_str, '$..summaryScore')
     if comments:
-        for comm in comments:
-            yield comm
+        for comm, scr in zip(comments, score):
+            yield {'content': comm, 'score': int(scr)}
 
 
 def clear_save_file():
@@ -78,15 +80,16 @@ def clear_save_file():
 
 def save_to_file(contents):
     with open(save_path, 'a+', encoding='utf-8') as f:
-        for con in contents:
-            f.write(con + '\n')
+        for content in contents:
+            print(content)
+            f.write(f'score: {content["score"]}, comment: {content["content"]}\n')
     res = pd.DataFrame(contents)
     res.to_excel(save_excel_path)
 
 
 def work(page):
     print(f'正在爬取第{page}页...')
-    return [comment for comment in parse_one_page_comments(page)]
+    return [dic for dic in parse_one_page_comments(page)]
 
 
 if __name__ == '__main__':
