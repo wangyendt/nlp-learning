@@ -73,11 +73,12 @@ class Spider:
 
 if __name__ == '__main__':
     target = {
-        'vivo-nex3': '100007988984',
-        'vivo-nex3-5g': '100007988988',
-        'vivo-iqoo-pro': '100007612396',
-        'vivo-iqoo-pro-5g': '100007411764',
-        'huawei-p30-pro': '100008384328'
+        # 'vivo-nex3': '100007988984',
+        # 'vivo-nex3-5g': '100007988988',
+        # 'vivo-iqoo-pro': '100007612396',
+        # 'vivo-iqoo-pro-5g': '100007411764',
+        # 'huawei-p30-pro': '100008384328',
+        'huawei-p30-pro-union': '100004788075'
     }
 
     url_base = 'https://sclub.jd.com/comment/productPageComments.action?'

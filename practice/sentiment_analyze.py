@@ -39,9 +39,9 @@ if __name__ == '__main__':
         num_good = sum(df['评价'] == '好评')
         num_all = len(df)
         print(file, num_good / num_all)
-        # df.to_excel(os.path.join(result_root, re.findall(
-        #     r'\\([\da-z-_]*?)\.xlsx$', file
-        # )[0] + f'_好评率([{num_good}][{num_all}])result.xlsx'))
+        df.to_excel(os.path.join(result_root, re.findall(
+            r'\\([\da-z-_]*?)\.xlsx$', file
+        )[0] + f'_好评率([{num_good}][{num_all}])result.xlsx'))
     word_split_jieba = jieba.cut('\n'.join(document), cut_all=False)
     word_space = ' '.join(word_split_jieba)
     img = imread('cat.jpg')
