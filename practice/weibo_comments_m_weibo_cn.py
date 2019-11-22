@@ -5,7 +5,7 @@
 @author: Wayne
 @contact: wangye.hope@gmail.com
 @software: PyCharm
-@file: weibo_comments.py
+@file: weibo_comments_m_weibo_cn.py
 @time: 2019/11/18 16:54
 """
 
