@@ -73,12 +73,18 @@ class Spider:
 
 if __name__ == '__main__':
     target = {
-        'vivo-nex3': '100007988984',
-        'vivo-nex3-5g': '100007988988',
+        # 'vivo-nex3': '100007988984',
+        # 'vivo-nex3-5g': '100007988988',
+        # 'vivo-iqoo-pro': '100007612396',
+        # 'vivo-iqoo-pro-5g': '100007411764',
+        # 'huawei-p30-pro': '100008384328',
+        # 'huawei-p30-pro-union': '100004788075',
         'vivo-iqoo-pro': '100007612396',
-        'vivo-iqoo-pro-5g': '100007411764',
-        'huawei-p30-pro': '100008384328',
-        'huawei-p30-pro-union': '100004788075'
+        'vivo-iqoo-pro-5g(8+128)': '100007411764',
+        'vivo-iqoo(8+256)':'100002425257',
+        'vivo-iqoo-neo(6+128)': '100005179183',
+        'vivo-iqoo-5g':'57984427611',
+        'vivo-iqoo-pro-5g':'57168056742',
     }
 
     url_base = 'https://sclub.jd.com/comment/productPageComments.action?'

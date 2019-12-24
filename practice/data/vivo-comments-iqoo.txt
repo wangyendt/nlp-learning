@@ -6,10 +6,6 @@ score: 5, comment: 16号晚上买的，18号上午到了，迫不及待的拆开
 score: 5, comment: 发布会结束下单，第二天发货，次日到货。发货速度和到货速度满意！
 手机无界全面屏+隐藏式按压键！满分！！音质满分，很好听，而且老公说芯片和耳机煲一段时间会更好！拍照明天出门尝试，迫不及待去下王者了，农药迷遗憾这里5G还没覆盖，不然更加畅快！哈哈！客服来首诗，送我去顶楼呀！
 score: 5, comment: 美到不离手，国产威武！
-score: 5, comment: 满意
-score: 5, comment: 东西的质量确实不错，速度相当的快，就是在背面的图案和文字不是太明显
-score: 5, comment: 可以快
-score: 5, comment: 挺不错的，超喜欢
 score: 5, comment: 快递慢了
 score: 5, comment: 顺风快递就是快
 score: 5, comment: 感觉不错
@@ -27,6 +23,7 @@ score: 5, comment: 非常满意
 score: 5, comment: 手机非常不错，我一直在使用。
 score: 5, comment: 挺好用的外观也很好
 score: 5, comment: 很好的，一直支持vivo
+score: 4, comment: 手机相当不错。就是物流太慢了！服务态度一般
 score: 5, comment: vivo第N台手机了 用惯了这个牌子也不想换其他牌子的手机，以后还会一如既往的支持vivo,加油！
 score: 5, comment: 非常好，我特别喜欢这个升降式摄像头。
 score: 5, comment: 用这感觉非常顺手，非常满意。电量也很耐用非常喜欢。
@@ -268,6 +265,16 @@ score: 5, comment: 非常喜欢
 score: 5, comment: 观望了很久，还是经不住诱惑，终于下手了，物有所值
 score: 5, comment: 一直用VIVO的手机，特别喜欢
 score: 5, comment: 当天就到了。
+score: 5, comment: 很好
+score: 5, comment: 感觉莱斯马飞！
+score: 5, comment: 特别好用
+score: 5, comment: 感觉手机不错！
+score: 5, comment: 第四部vivo手机了，NEX值得拥有
+score: 4, comment: 非常不错：没有无线冲电是一大遗憾
+score: 5, comment: 整体感觉都还不错。
+score: 5, comment: 挺好的，很喜欢。值得购买
+score: 5, comment: 货收到了，一直没有评评
+score: 5, comment: 不错
 score: 5, comment: 物流速度很快！！手机不错，
 score: 5, comment: VIVO，从NEX双屏，就开启未来时代，心情辗转反复几天，还是下定决心了购买了。说句实话：客服发货速度太慢，上午10点下单，晚上11点发货；结果顺丰还晚到了10个小时。终于拿到了，迫不及待打开包装，整机外观非常漂亮。那在手机非常有质感。我从NEXs双屏再到NEX3，对这个系列依旧情有独钟，它名字叫VIVO！
 score: 5, comment: 实物拍摄超清晰，手感很好
@@ -321,16 +328,6 @@ score: 5, comment: 很好  值得购买  绝对惊艳  老粉丝了
 score: 5, comment: 这部手机挺好看的，就是有点重
 score: 5, comment: 不错的手机
 score: 5, comment: 非常满意，用了一段时间了。
-score: 5, comment: 手机用的挺好的
-score: 5, comment: 很奈斯，值得你拥有。
-score: 5, comment: 为什么没有给我雕刻
-score: 5, comment: 真的漂亮   喜欢
-score: 5, comment: 用了一段时间来评论，非常好用，电话秘书功能超方便，还有肤质测试
-score: 4, comment: emmm，还行吧，就是送的蓝牙耳机有的差，另外手机外套不好看，打王者的话就是移动键往下经常断开希望能优化下把移动键调上一些。软件啥的没啥毛病，用的挺流畅的，电池也挺给力一天一充（可能新手机原因），其他没啥了图就不拍了
-score: 4, comment: 就是刻的字应该用彩色的才好看
-score: 5, comment: 66
-score: 5, comment: 屏幕素质还需提高，综合体验非常棒
-score: 5, comment: 手感不错，
 score: 5, comment: 一直在用vivo手机，上一部是Xplay6，这部机售价高，迟迟没敢买，终于等到减免，毫不犹豫入手。操作和Xplay6有点区别，还在熟悉，照相没的说顶级的，听音乐不如Xplay6有一定的差距，游戏不玩没有体验，不过系统确实快，无卡顿现象，分辨率肉眼无法分辨清晰度，不过挺清晰的，毕竟是现阶段顶级手机 ，颜值爆表，我用这手机有点可惜了，不玩游戏，不看电影，就是浏览浏览网页，听听音乐，不过本大爷是手机控，就是喜欢高颜值手机，哈哈😄。
 score: 5, comment: 非常满意，就是外加上的字太小了
 score: 5, comment: 系统非常流畅，整体视觉震撼。
@@ -601,6 +598,16 @@ score: 5, comment: 很好用，不错的一款机，但必须注意小心屏幕�
 score: 5, comment: 好用
 score: 5, comment: 很不错，买的第二个了，超级好用，赞了！！
 score: 5, comment: 很好
+score: 5, comment: 非常好用太喜欢这个产品了
+score: 5, comment: 买来用到现在，没的说，真的很棒。
+score: 5, comment: 不错
+score: 5, comment: 👍👍
+score: 5, comment: 发货速度超快，昨天下单的，今天晚上就到了，手机超好看，很精致大气，真的很棒
+score: 5, comment: 完美无缺
+score: 5, comment: 很满意，就是没有找到合适的钢化膜，有点小担心
+score: 5, comment: 手机真是太棒了
+score: 5, comment: 很好
+score: 5, comment: 发货速度是真心快。上午下到，下午就到了
 score: 5, comment: Vivo NEX3  5G手机非常漂亮，功能非常强大，非常快。真可谓是随心所欲。非常完美的一次购物。
 score: 5, comment: 非常满意！！！
 score: 5, comment: 太完美了 超级喜欢 私人订制
@@ -698,16 +705,6 @@ score: 5, comment: 可以
 score: 4, comment: 发货速度挺快，手机收到了，就是没有5G网，不能试试
 score: 5, comment: 一直在用vivo手机，非常不错，之前用的X9从2016年用到现在，所有东西都没坏，vivo非常值得信赖，这次在nex3和华为mate30之间犹豫了很久，我还是选择了nex3,希望vivo做得越来越好
 score: 5, comment: 不离不弃，生死相依
-score: 5, comment: 超级喜欢这个手机，爱死了
-score: 5, comment: 性价比高
-score: 5, comment: 手机还可以。
-score: 5, comment: 就是价格没保护，掉价也掉的太狠了，让人心里好不舒服
-score: 5, comment: 可以我用的还不错，用用以后再说吧。
-score: 5, comment: 不错
-score: 5, comment: 超级好
-score: 5, comment: 不错
-score: 5, comment: 手感很好，颜值高，用着速度也可以，值得购买
-score: 5, comment: 非常满意非常完美
 score: 5, comment: 手机拿着爱不释手，高清反应刚刚的，内存大
 score: 5, comment: 这部手机信号相当好，在电梯里也可以刷抖音了。
 score: 5, comment: 感觉不错
@@ -750,16 +747,6 @@ score: 5, comment: 完美的手机  非常不错
 score: 5, comment: 发货速度很快，手机很喜欢
 score: 5, comment: 感觉超赞  全家都用vivo
 score: 5, comment: 物流很快，今天下单，，明天就到了
-score: 5, comment: 总体还不错，款式有点不太喜欢。
-score: 5, comment: 手机很好用，只是没有开发票
-score: 5, comment: 很喜欢你，很强大！
-score: 5, comment: 选择的深空流光，运行特别快，很满意的一次购物。
-score: 5, comment: 第五部vivo了，基本都是用旗舰机型。一如既往的好用，耐用！！！大爱vivo
-score: 5, comment: 货到了看了看还行吧！照相功能还是不如HUAWEI华为
-score: 5, comment: 超级喜欢
-score: 5, comment: 手机拍的图片
-score: 5, comment: 我就想知道什么意思，我刚买就降价七百，买的时候6198现在少了七百，vivo太让人失望了，买的时候一分钱都他妈的没优惠，vivo去你妈的逼
-score: 5, comment: 我绝对是V粉，第三个了，一天就到货，很快，先确认收货，用用看再来评价
 score: 3, comment: 高端大气上档次，低调奢华有内涵。奔放洋气有深度，狂拽炫酷屌炸天。
 score: 5, comment: 手机非常不错，很满意。以后就锁定这个品牌了。
 score: 5, comment: 手机收到了真的很喜欢很漂亮
@@ -1023,16 +1010,6 @@ score: 5, comment: 很好
 score: 5, comment: 很合适
 score: 5, comment: 五彩斑斓的黑，挺美！
 score: 5, comment: 漂亮
-score: 5, comment: 外形漂亮，手感也很好，使用很便捷，老婆非常喜欢
-score: 5, comment: 手机收到后三天来评价，物流很给力。机型设计很好。很满意的一次购物，
-score: 5, comment: 一直是vivo忠实用户，这次换了新机，也是一如既往的喜欢
-score: 5, comment: 很好用
-score: 5, comment: 手机用着很不错，我也一直用vivo手机感觉个个方面都很满意
-score: 5, comment: 挺好的
-score: 5, comment: 非常满意 给媳妇买的   手机非常漂亮    速度快   手感好   就是没有晒图   手机媳妇拿上班去了   所以没晒图
-score: 5, comment: 很有科技感
-score: 5, comment: 手机很满意，用起来很流畅，屏幕好大，这是第5部Vivo手机了，一直喜欢这个品牌，Vivo加油！
-score: 5, comment: 挺好的
 score: 5, comment: 还可以
 score: 5, comment: 好好
 score: 5, comment: 牛气冲天
@@ -1650,6 +1627,16 @@ score: 5, comment: 还不错
 score: 5, comment: 哎呀我的妈呀！震撼到我了！用了十年的vivo这款手机太给力了
 score: 5, comment: 非常惊艳
 score: 5, comment: 不错不错😊
+score: 5, comment: 产品非常不错
+score: 5, comment: 非常好，手感特别好，非常喜欢
+score: 5, comment: 完美
+score: 5, comment: 手机收到了，相当漂亮，老婆很喜欢，支持vivo手机，家里人用的都是vivo手机，从Y66一直用到nex 3 5G一直支持vivo很好很强大！
+score: 5, comment: 视觉、性能、操控......等各种感受俱佳！
+score: 5, comment: 手机还没开始使用，不过物流速度挺快。
+score: 5, comment: 我离的远所以4天到的
+score: 5, comment: 已经买了第二台NEX3支持国产。国产加油。全力支持。
+score: 5, comment: 非常喜欢，物有所值。
+score: 5, comment: 感觉拿手是棒棒的有点儿凉。
 score: 5, comment: 一直用的vivo，感觉这个品牌值得信赖，NEX 3添加了许多贴心的功能，感觉不错。总结，保守的设计又走在科技的前沿！希望能一直走下去，加油vivo
 score: 5, comment: 非常满意，非常喜欢，挺不错的手机，赞一个👍
 score: 5, comment: 刚收到，还没用，用后再追
@@ -2797,16 +2784,6 @@ score: 5, comment: 拿在手里爱惜得不得了，超级喜欢，大爱国产�
 score: 5, comment: 美感十足
 score: 5, comment: 用第一代就觉得按键碍手碍眼，第一代还在用还是非常好用，但是第三代出来没任何按键和5G深深吸引
 score: 5, comment: 新手机发货物流速度很快，手机也很好，高大上。
-score: 5, comment: 一切非常满意，除了游戏无法删除，其它随意。
-score: 5, comment: 物流快，手机流非常满意
-score: 5, comment: nb
-score: 5, comment: 非常喜欢
-score: 5, comment: 超帅的一款手机
-score: 5, comment: 很不错，
-score: 5, comment: 用了一段时间总体感觉还不错咯
-score: 5, comment: 很好错了
-score: 5, comment: 用了2天了，感觉还不错，以前用的是nex，现在是nex3，希望nex这个能越来越好，以后再买!
-score: 5, comment: 手机不错，显示效果不错
 score: 5, comment: 好爽，值了
 但是叭这个物流速度怪怪的，后买的手机膜都到了半天了哈哈哈哈
 score: 5, comment: 快递给力
@@ -3346,16 +3323,6 @@ score: 5, comment: 太赞了
 score: 5, comment: 很好很漂亮
 score: 5, comment: 还不错
 score: 5, comment: 一般吧！我们这里没有5G网络。不知道到底有多快
-score: 5, comment: 我很喜欢这手机 可以的  第一次用
-score: 5, comment: 还行，刚拿到在体验中
-score: 5, comment: 第六部ViVO手机了 习惯的系统  手机合我风格
-score: 5, comment: 外观漂亮，运行完美
-score: 4, comment: 产品好
-score: 5, comment: 已收到手机不错不错这台手机是我未来的期待好久了今天终于实现我眼前非常喜欢满意，用起来比目前的好用多了，三月份买了iQOO现在又换了这部，这部更好
-score: 5, comment: 运行速度贼快，发货一样。
-score: 5, comment: 很好用，手感很好。
-score: 5, comment: 非常好用，今天试了一下5G很快
-score: 5, comment: 一个字  爽   买一个去感受吧
 score: 5, comment: 不错
 score: 5, comment: 此用户没有评价
 score: 5, comment: 屏幕满分。
@@ -3552,7 +3519,6 @@ score: 5, comment: 特别爽
 score: 1, comment: 降价太严重了，😓😓买了才没多久，就少了差不多七百块钱，坑
 score: 2, comment: 降价太快了，被同事嘲笑了，这波坑老客户操作太差劲了
 score: 1, comment: 降价太快 了  一买就赔钱   那会买的5600多  啥都不送  现在5000还送耳机  建议去实体店买吧
-score: 4, comment: 手机相当不错。就是物流太慢了！服务态度一般
 score: 1, comment: 不到一个月掉 漆，昨天晚上才发现，官网买的，不知道能退货不？
 score: 2, comment: 用了几天才发现手机好像是2手货一样，屏保全是指甲痕迹，看起来不像原装的
 score: 1, comment: 恶心死了，刚买没一个月，降价700块。还支持个屁啊。 垃圾要死。
@@ -3610,16 +3576,6 @@ score: 4, comment: 一样东西都不送。。。
 score: 1, comment: 摄像拍照都不清楚
 score: 3, comment: 性能还可以，就是非常的耗电，充满电最多可以看8个半小时电视，看小说能用18个小时，手机没有续航能力，说关机就关机百分之五电量只能待机半个小时。玩游戏就更不用说了，电量简直就是飞一般的速度。严重怀疑商家是不是给我装了假电池？还是说给我装了二手电池？
 score: 3, comment: 发货的速度太慢了，要等4天左右才能拿到。
-score: 5, comment: 看了很多手机，一眼就喜欢了这款，狠狠心给自己买了，分24期免息，每月200多块钱，实在太欢喜。
-score: 1, comment: NEX3发布上市到现在才多长时间就降价这么多，这让我们这些一直支持Vivo并第一时间下单购买NEX3的用户怎么想？一款好的产品定价偏高市场同类我们毅然买了是因为我们决得它值这个价。可是现在你们让我们认为NEX3很不值，让我们认为NEX3的产品水分很大。说实话，我现在不会去推荐身边的亲朋好友去购买NEX3，以后Vivo的所有产品我也会慎重考虑购买。
-score: 4, comment: 后壳没有图片上那么漂亮，很容易留下指纹。隐藏按键调成灵敏也要很用力按
-score: 1, comment: 降价太快了，真你妈醉了，这叫老用户情何以堪，用着同样的东西，别人的能便宜这么多
-score: 1, comment: 真坑爹 刚买回来就便宜了700多
-score: 4, comment: 特意用了几天才来评价的 手机充电很快 用电也很快 充一次电 也就用一天 内存很大 照相效果放大些就不是很清晰 发货也很快 相对来说比较满意
-score: 4, comment: 不是说整点有礼品的吗？，礼品呢？
-score: 1, comment: 不建议大家购买我买的机子有问题屏幕左下角大家仔细看  能看到好几个绿点  有时候还会变多   换货超慢  刚开始说的三天之内后来又说3-5天最后又说7天 黄金会员有啥用 中了有问题的机子处理还这么慢确实机子的问题要确认个七天   这个问题开机就能看到又不需要拆机我还不如退货重新买个机子别人家换货两天就能到手vivo越拖越久买nexs的时候觉得挺好的可能没遇到问题  这次就失望了   下次以后我会换个牌子用  我还专门来官网买的刚开始还怀疑绿点是我专门搞的  我以前官网买的都是直接确认收货  这次是真的机子有问题  屏幕没有2000k 没有90hz hifi没有nexs好  拍照也没有光学防抖其他同价位的机子都比nex3好  我是因为以前买的vivo觉得vivo好才买vivo 这次可能是运气不好 但是我想换其它手机了无理由退货才7天 换个货就7天了不会用这个机子了
-score: 4, comment: 物流慢了一滴
-score: 4, comment: 一直用vivo手机，X21，NEX星迹版，这次又出了NEX35G版本，12G运行256G，高配置，所以双十一搞活动优惠价格，下定决心选择了这款，手感特好，特灵活，网速超快，好品牌。
 score: 3, comment: 发货太慢
 score: 4, comment: 发货慢了
 score: 4, comment: 路途有点曲折不过还好吧，

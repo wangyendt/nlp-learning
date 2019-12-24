@@ -17,19 +17,24 @@ from urllib.parse import urlencode
 import jsonpath
 import pandas as pd
 import requests
+from fake_useragent import UserAgent
 
 products = {
     'nex3': 10001477,
+    'iqoo': 10000467,
+    'iqoo-pro': 10001399
 }
 save_path = 'data/vivo-comments.txt'
 save_excel_path = 'data/vivo-comments.xlsx'
 url_base = 'http://shop.vivo.com.cn/api/v1/remark/getDetail?'
 
+ua = UserAgent()
+
 
 def get_page_number():
     json_str = get_one_page_comments(
         url_base,
-        'nex3'
+        'iqoo-pro'
     )
     page_numbers = jsonpath.jsonpath(json_str, '$..pages')
     return int(page_numbers[0])
@@ -37,7 +42,8 @@ def get_page_number():
 
 def get_one_page_comments(url, product, page=1):
     header = {
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+        'user-agent': ua.random,
+        # 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
     }
     data = {
         'spuId': products[product],
@@ -49,6 +55,7 @@ def get_one_page_comments(url, product, page=1):
     }
     try:
         response = requests.get(url + urlencode(data), headers=header)
+        time.sleep(1)
         if response.status_code == 200:
             return response.json()
         else:
