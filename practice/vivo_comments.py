@@ -11,7 +11,6 @@
 
 import os
 import time
-from multiprocessing import Pool
 from urllib.parse import urlencode
 
 import jsonpath
@@ -29,12 +28,13 @@ save_excel_path = 'data/vivo-comments.xlsx'
 url_base = 'http://shop.vivo.com.cn/api/v1/remark/getDetail?'
 
 ua = UserAgent()
+last_id = ['']
 
 
 def get_page_number():
     json_str = get_one_page_comments(
         url_base,
-        'iqoo-pro'
+        'iqoo'
     )
     page_numbers = jsonpath.jsonpath(json_str, '$..pages')
     return int(page_numbers[0])
@@ -51,11 +51,12 @@ def get_one_page_comments(url, product, page=1):
         'fullpaySkuIdSet': '',
         'pageNum': page,
         'pageSize': 10,
-        't': int(time.time() * 1000)
+        't': int(time.time() * 1000),
+        'lastId': last_id[0]
     }
     try:
         response = requests.get(url + urlencode(data), headers=header)
-        time.sleep(1)
+        time.sleep(4)
         if response.status_code == 200:
             return response.json()
         else:
@@ -75,6 +76,9 @@ def parse_one_page_comments(page):
     # pprint.pprint(json_str)
     comments = jsonpath.jsonpath(json_str, '$..content')
     score = jsonpath.jsonpath(json_str, '$..summaryScore')
+    last_id_tmp = jsonpath.jsonpath(json_str, '$..lastId')
+    if last_id_tmp and last_id_tmp[0]: last_id[0] = last_id_tmp[0]
+    print(f'page={page}, last_id: {last_id[0]}, last_id_tmp: {last_id_tmp}')
     if comments:
         for comm, scr in zip(comments, score):
             yield {'content': comm, 'score': int(scr)}
@@ -83,15 +87,23 @@ def parse_one_page_comments(page):
 def clear_save_file():
     if os.path.exists(save_path):
         os.remove(save_path)
+    if os.path.exists(save_excel_path):
+        os.remove(save_excel_path)
+
+
+def create_empty_file():
+    nan_excel = pd.DataFrame()
+    nan_excel.to_excel(save_excel_path)
+    return pd.ExcelWriter(save_excel_path)
 
 
 def save_to_file(contents):
     with open(save_path, 'a+', encoding='utf-8') as f:
         for content in contents:
-            print(content)
+            # print(content)
             f.write(f'score: {content["score"]}, comment: {content["content"]}\n')
     res = pd.DataFrame(contents)
-    res.to_excel(save_excel_path)
+    res.to_excel(writer)
 
 
 def work(page):
@@ -101,12 +113,21 @@ def work(page):
 
 if __name__ == '__main__':
     page_number = get_page_number()
+    print(f'有{page_number}页需要爬取')
     clear_save_file()
-    pool = Pool()
-    max_worker = 64
-    n_tasks = page_number // max_worker
     result = []
-    for i in range(n_tasks + 1):
-        result += (pool.imap(work, range(max_worker * i + 1, min(page_number, max_worker * (i + 1)) + 1)))
-    # todo: 要改成监听异步减少运行时间
-    save_to_file(sum(result, []))
+    with pd.ExcelWriter(save_excel_path, mode='w') as writer:
+        for p in range(page_number):
+            result += work(p)
+            print(result)
+        save_to_file(result)
+        writer.save()
+    # pool = Pool()
+    # max_worker = 4
+    # n_tasks = page_number // max_worker
+    # for i in range(n_tasks + 1):
+    #     result = list(pool.imap(work, range(max_worker * i + 1, min(page_number, max_worker * (i + 1)) + 1)))
+    #     print(f'截止目前共有{len(result)}条结果')
+    #     # todo: 要改成监听异步减少运行时间
+    #     save_to_file(sum(result, []))
+    # writer.save()
