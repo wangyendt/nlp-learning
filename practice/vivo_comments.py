@@ -17,6 +17,7 @@ import jsonpath
 import pandas as pd
 import requests
 from fake_useragent import UserAgent
+from openpyxl import load_workbook
 
 products = {
     'nex3': 10001477,
@@ -97,13 +98,97 @@ def create_empty_file():
     return pd.ExcelWriter(save_excel_path)
 
 
+def append_df_to_excel(filename, df, sheet_name='Sheet1', startrow=None,
+                       truncate_sheet=False,
+                       **to_excel_kwargs):
+    """
+    Append a DataFrame [df] to existing Excel file [filename]
+    into [sheet_name] Sheet.
+    If [filename] doesn't exist, then this function will create it.
+
+    Parameters:
+      filename : File path or existing ExcelWriter
+                 (Example: '/path/to/file.xlsx')
+      df : dataframe to save to workbook
+      sheet_name : Name of sheet which will contain DataFrame.
+                   (default: 'Sheet1')
+      startrow : upper left cell row to dump data frame.
+                 Per default (startrow=None) calculate the last row
+                 in the existing DF and write to the next row...
+      truncate_sheet : truncate (remove and recreate) [sheet_name]
+                       before writing DataFrame to Excel file
+      to_excel_kwargs : arguments which will be passed to `DataFrame.to_excel()`
+                        [can be dictionary]
+
+    Returns: None
+    """
+
+    # ignore [engine] parameter if it was passed
+    if 'engine' in to_excel_kwargs:
+        to_excel_kwargs.pop('engine')
+
+    writer = pd.ExcelWriter(filename, engine='openpyxl')
+
+    # Python 2.x: define [FileNotFoundError] exception if it doesn't exist
+    try:
+        FileNotFoundError
+    except NameError:
+        FileNotFoundError = IOError
+
+    try:
+        # try to open an existing workbook
+        writer.book = load_workbook(filename)
+
+        # get the last row in the existing Excel sheet
+        # if it was not specified explicitly
+        if startrow is None and sheet_name in writer.book.sheetnames:
+            startrow = writer.book[sheet_name].max_row
+
+        # truncate sheet
+        if truncate_sheet and sheet_name in writer.book.sheetnames:
+            # index of [sheet_name] sheet
+            idx = writer.book.sheetnames.index(sheet_name)
+            # remove [sheet_name]
+            writer.book.remove(writer.book.worksheets[idx])
+            # create an empty sheet [sheet_name] using old index
+            writer.book.create_sheet(sheet_name, idx)
+
+        # copy existing sheets
+        writer.sheets = {ws.title: ws for ws in writer.book.worksheets}
+    except FileNotFoundError:
+        # file does not exist yet, we will create it
+        pass
+
+    if startrow is None:
+        startrow = 0
+
+    # write out the new sheet
+    df.to_excel(writer, sheet_name, startrow=startrow, **to_excel_kwargs)
+
+    # save the workbook
+    writer.save()
+
+
 def save_to_file(contents):
     with open(save_path, 'a+', encoding='utf-8') as f:
         for content in contents:
             # print(content)
             f.write(f'score: {content["score"]}, comment: {content["content"]}\n')
-    res = pd.DataFrame(contents)
-    res.to_excel(writer)
+    append_df_to_excel(save_excel_path, pd.DataFrame(contents), header=None, index=False)
+    # if os.path.exists(save_excel_path):
+    #     old = pd.read_excel(save_excel_path, header=None)
+    #     new = pd.DataFrame(contents)
+    #     print(old.head(2))
+    #     print(new.head(2))
+    #     old.columns = ['1', '2']
+    #     new.columns = ['1', '2']
+    #     if not old:
+    #         res = new.copy()
+    #     else:
+    #         res = old.append(new, ignore_index=True)
+    # else:
+    #     res = pd.DataFrame(contents)
+    # res.to_excel(save_excel_path, header=None, index=None)
 
 
 def work(page):
@@ -116,12 +201,10 @@ if __name__ == '__main__':
     print(f'有{page_number}页需要爬取')
     clear_save_file()
     result = []
-    with pd.ExcelWriter(save_excel_path, mode='w') as writer:
-        for p in range(page_number):
-            result += work(p)
-            print(result)
+    for p in range(page_number):
+        result += work(p)
+        print(result)
         save_to_file(result)
-        writer.save()
     # pool = Pool()
     # max_worker = 4
     # n_tasks = page_number // max_worker
