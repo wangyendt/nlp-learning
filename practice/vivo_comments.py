@@ -169,12 +169,16 @@ def append_df_to_excel(filename, df, sheet_name='Sheet1', startrow=None,
     writer.save()
 
 
-def save_to_file(contents):
-    with open(save_path, 'a+', encoding='utf-8') as f:
+def save_to_file(contents, page):
+    size = 100
+    pd_, pr_ = divmod(page, size)
+    sp = save_path.replace('.txt', f'_{pd_ * size + 1}-{(pd_ + 1) * size}.txt')
+    sep = save_excel_path.replace('.xlsx', f'_{pd_ * size + 1}-{(pd_ + 1) * size}.xlsx')
+    with open(sp, 'a+', encoding='utf-8') as f:
         for content in contents:
             # print(content)
             f.write(f'score: {content["score"]}, comment: {content["content"]}\n')
-    append_df_to_excel(save_excel_path, pd.DataFrame(contents), header=None, index=False)
+    append_df_to_excel(sep, pd.DataFrame(contents), header=None, index=False)
     # if os.path.exists(save_excel_path):
     #     old = pd.read_excel(save_excel_path, header=None)
     #     new = pd.DataFrame(contents)
@@ -203,8 +207,9 @@ if __name__ == '__main__':
     result = []
     for p in range(page_number):
         result += work(p)
-        print(result)
-        save_to_file(result)
+        if result:
+            print(result[-1])
+        save_to_file(result, p)
     # pool = Pool()
     # max_worker = 4
     # n_tasks = page_number // max_worker
