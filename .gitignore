@@ -125,3 +125,6 @@ dmypy.json
 
 .idea
 *.csv
+*.txt
+*.xlsx
+practice/data/vivo-comments.txt
