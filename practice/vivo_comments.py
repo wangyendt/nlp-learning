@@ -22,20 +22,23 @@ from openpyxl import load_workbook
 products = {
     'nex3': 10001477,
     'iqoo': 10000467,
-    'iqoo-pro': 10001399
+    'iqoo-pro': 10001399,
+    'iqoo3': 10001922,
 }
-save_path = 'data/vivo-comments.txt'
-save_excel_path = 'data/vivo-comments.xlsx'
+
 url_base = 'http://shop.vivo.com.cn/api/v1/remark/getDetail?'
 
 ua = UserAgent()
 last_id = ['']
+to_search = 'iqoo3'
+save_path = f'data/vivo-{to_search}-comments.txt'
+save_excel_path = f'data/vivo-{to_search}-comments.xlsx'
 
 
 def get_page_number():
     json_str = get_one_page_comments(
         url_base,
-        'iqoo'
+        to_search
     )
     page_numbers = jsonpath.jsonpath(json_str, '$..pages')
     return int(page_numbers[0])
