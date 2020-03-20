@@ -9,6 +9,7 @@
 @time: 2019/10/12 14:51
 """
 
+import configparser
 import os
 import time
 from urllib.parse import urlencode
@@ -19,18 +20,25 @@ import requests
 from fake_useragent import UserAgent
 from openpyxl import load_workbook
 
-products = {
-    'nex3': 10001477,
-    'iqoo': 10000467,
-    'iqoo-pro': 10001399,
-    'iqoo3': 10001922,
-}
+if os.path.exists('config_id.ini'):
+    conf = configparser.ConfigParser()
+    conf.read('config_id.ini')
+    products = dict(conf.items('VIVO'))
+else:
+    raise Exception('There is no file \'config_id.ini\', please contact Wanye!')
+
+# products = {
+#     'nex3': 10001477,
+#     'iqoo': 10000467,
+#     'iqoo-pro': 10001399,
+#     'iqoo3': 10001922,
+# }
 
 url_base = 'http://shop.vivo.com.cn/api/v1/remark/getDetail?'
 
 ua = UserAgent()
 last_id = ['']
-to_search = 'iqoo3'
+to_search = 'iqoo3'  # todo: 这里修改要搜索的产品
 save_path = f'data/vivo-{to_search}-comments.txt'
 save_excel_path = f'data/vivo-{to_search}-comments.xlsx'
 
@@ -203,7 +211,7 @@ def work(page):
     return [dic for dic in parse_one_page_comments(page)]
 
 
-if __name__ == '__main__':
+def main():
     page_number = get_page_number()
     print(f'有{page_number}页需要爬取')
     clear_save_file()
@@ -222,3 +230,7 @@ if __name__ == '__main__':
     #     # todo: 要改成监听异步减少运行时间
     #     save_to_file(sum(result, []))
     # writer.save()
+
+
+if __name__ == '__main__':
+    main()
